@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-databricks-{{ version }}.tar.gz
-  sha256: b6b71ba6e2f19a4fab571278ec29d80522cbc05c85b01525fed588c9d26ea790
+  sha256: 6d20a576f942ae5af4e2b21df35de5ff7fa7ad210a8d05dc937f9fbd59cfcca7
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.7
     - apache-airflow >=2.1.0
-    - databricks-sql-connector >=1.0.0,<2.0.0
+    - databricks-sql-connector >=1.0.2,<2.0.0
     - requests >=2.26.0,<3
 
 test:
@@ -38,7 +38,9 @@ about:
   home: https://airflow.apache.org/
   summary: Provider for Apache Airflow. Implements apache-airflow-providers-databricks package
   license: Apache-2.0
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-databricks/stable/index.html
   dev_url: https://github.com/apache/airflow/
