@@ -21,14 +21,15 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - apache-airflow >=2.1.0
+    - aiohttp >=3.6.3,<4
+    - apache-airflow >=2.2.0
     - databricks-sql-connector >=2.0.0,<3.0.0
-    - requests >=2.26.0,<3
+    - requests >=2.27,<3
 
 test:
   imports:
     - airflow.providers.databricks
-    - airflow.providers.databricks.example_dags
+    - airflow.providers.databricks.hooks
   commands:
     - pip check
   requires:
