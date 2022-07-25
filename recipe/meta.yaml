@@ -23,6 +23,7 @@ requirements:
     - python >=3.7
     - aiohttp >=3.6.3,<4
     - apache-airflow >=2.2.0
+    - apache-airflow-providers-common-sql
     - databricks-sql-connector >=2.0.0,<3.0.0
     - requests >=2.27,<3
 
