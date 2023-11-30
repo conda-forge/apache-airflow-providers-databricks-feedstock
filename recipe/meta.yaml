@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "5.0.0" %}
+{% set version = "5.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-databricks-{{ version }}.tar.gz
-  sha256: 4196cca7da07a1a18042cbfceca9f1bceaaf0f6c3a4a00b7255e57eb071f952a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_databricks-{{ version }}.tar.gz
+  sha256: 93fb23ffd0d388835bcb5cf128aa84c7d9aeb4021a059ff5b6e717bddfe351d9
 
 build:
   noarch: python
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
     - aiohttp >=3.6.3,<4
-    - apache-airflow-providers-common-sql >=1.5.0
+    - apache-airflow-providers-common-sql >=1.8.1
     - apache-airflow >=2.5.0
     - databricks-sql-connector >=2.0.0,<3.0.0,!=2.9.0
     - requests >=2.27,<3
@@ -30,7 +30,6 @@ requirements:
 test:
   imports:
     - airflow.providers.databricks
-    - airflow.providers.databricks.hooks
   commands:
     - pip check
   requires:
@@ -38,11 +37,9 @@ test:
 
 about:
   home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-databricks package
+  summary: Provider package apache-airflow-providers-databricks for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/databricks/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-databricks/stable/index.html
   dev_url: https://github.com/apache/airflow/
