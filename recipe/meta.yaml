@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "5.0.1" %}
+{% set version = "6.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_databricks-{{ version }}.tar.gz
-  sha256: 93fb23ffd0d388835bcb5cf128aa84c7d9aeb4021a059ff5b6e717bddfe351d9
+  sha256: 848a4782367f83730e3b38a46203d0f134aa90b6f851d280ef56841b05990e0f
 
 build:
   noarch: python
@@ -22,10 +22,14 @@ requirements:
   run:
     - python >=3.8
     - aiohttp >=3.6.3,<4
-    - apache-airflow-providers-common-sql >=1.8.1
-    - apache-airflow >=2.5.0
+    - apache-airflow-providers-common-sql >=1.10.0
+    - apache-airflow >=2.6.0
     - databricks-sql-connector >=2.0.0,<3.0.0,!=2.9.0
     - requests >=2.27,<3
+
+    # picking up some older apache-airflow that allow pendulum 3, which doesn't work
+    # (these should ideally be patched)
+    - pendulum <3.0.0
 
 test:
   imports:
