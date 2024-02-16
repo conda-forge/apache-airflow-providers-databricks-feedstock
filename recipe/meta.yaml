@@ -27,10 +27,6 @@ requirements:
     - databricks-sql-connector >=2.0.0,<3.0.0,!=2.9.0
     - requests >=2.27.0,<3
 
-    # picking up some older apache-airflow that allow pendulum 3, which doesn't work
-    # (these should ideally be patched)
-    - pendulum <3.0.0
-
 test:
   imports:
     - airflow.providers.databricks
