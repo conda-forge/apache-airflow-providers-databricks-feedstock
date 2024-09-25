@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "6.9.0" %}
+{% set version = "6.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_databricks-{{ version }}.tar.gz
-  sha256: 287157d78757103346a6895cab325fb6ba8363dd515834d3e766f60832b2ba93
+  sha256: 63b63e1a031489f55410b905d697577f5829898d21895ec4dba427fa989fd29c
 
 build:
   noarch: python
