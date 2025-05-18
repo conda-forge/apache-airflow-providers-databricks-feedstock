@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "7.3.2" %}
+{% set version = "7.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_databricks-{{ version }}.tar.gz
-  sha256: 736b929c00673301e9854449994e8c97897d740b3c9353118b0d0c814b523b4f
+  sha256: 99e38381f9be8ba5e8ece214dddc19930eecd90a1b10ab754c489593ad9e3dc9
 
 build:
   noarch: python
@@ -20,9 +20,11 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
+    - apache-airflow-providers-common-compat >=1.6.0
+    - databricks-sqlalchemy >=1.0.2
     - python >={{ python_min }}
-    - apache-airflow >=2.9.0
-    - apache-airflow-providers-common-sql >=1.20.0
+    - apache-airflow >=2.10.0
+    - apache-airflow-providers-common-sql >=1.27.0
     - requests >=2.31.0,<3
     - databricks-sql-connector >=3.0.0
     - aiohttp >=3.9.2,<4
