@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
-{% set version = "7.7.1" %}
-{% set python_min = "3.10" %}
+{% set version = "7.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_databricks-{{ version }}.tar.gz
-  sha256: d7625197070e2103a68401e4c2322caf8dc381b5ae148b770d3063d005a1f213
+  sha256: a72bb21fda925b02499ce9c7af94be7f70a66a9aff2be80228239a2406fb81d8
 
 build:
   noarch: python
@@ -25,7 +24,6 @@ requirements:
     - apache-airflow >=2.10.0
     - apache-airflow-providers-common-compat >=1.6.0
     - apache-airflow-providers-common-sql >=1.27.0
-    - apache-airflow-providers-openlineage >=2.3.0
     - requests >=2.32.0,<3
     - databricks-sql-connector >=4.0.0
     - databricks-sqlalchemy >=1.0.2
