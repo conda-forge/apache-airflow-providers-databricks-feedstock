@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-databricks" %}
 {% set version = "7.7.2" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +24,6 @@ requirements:
     - apache-airflow >=2.10.0
     - apache-airflow-providers-common-compat >=1.6.0
     - apache-airflow-providers-common-sql >=1.27.0
-    - apache-airflow-providers-openlineage >=2.3.0
     - requests >=2.32.0,<3
     - databricks-sql-connector >=4.0.0
     - databricks-sqlalchemy >=1.0.2
