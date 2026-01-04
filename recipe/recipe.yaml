@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-databricks
-  version: "7.8.1"
+  version: "7.8.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_databricks-${{ version }}.tar.gz
-  sha256: e685e29110feaaef811accc2660e8ecfc26ed23927c0efc2864c628382f7cade
+  sha256: ddc33356d6d96917fa32a2ed3ed32fb9ca70906726cadf3d3baca91644750e75
 
 build:
   noarch: python
