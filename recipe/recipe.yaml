@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-databricks
-  version: "7.8.3"
+  version: 7.9.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_databricks-${{ version }}.tar.gz
-  sha256: a94f913472d51599f1f6d7e718f32839aff3e2f11a1aedf9822e7b781665c426
+  sha256: acbcb4d9a78f9dc4153cb019416b4fcbd54f4d492a9b70ab086f129d65d7d2d2
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
-    - apache-airflow-providers-common-compat >=1.12.0
+    - apache-airflow-providers-common-compat >=1.13.0
     - apache-airflow-providers-common-sql >=1.27.0
     - requests >=2.32.0,<3
     - databricks-sql-connector >=4.0.0
@@ -33,7 +33,6 @@ requirements:
     - pandas >=2.2.3
     # more restrictive for python >=3.13
     - pyarrow >=18.0.0
-
 tests:
   - python:
       imports:
