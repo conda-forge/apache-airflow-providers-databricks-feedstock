@@ -19,11 +19,11 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - flit-core ==4.0.2
+    - flit-core ==4.1.0
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
-    - apache-airflow-providers-common-compat >=1.13.0
+    - apache-airflow-providers-common-compat >=1.21.0
     - apache-airflow-providers-common-sql >=1.32.0
     - requests >=2.32.0,<3
     - databricks-sql-connector >=4.4.0
